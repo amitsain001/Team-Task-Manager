@@ -1,0 +1,77 @@
+<%- include('partials/header') %>
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+
+    <h2>
+        Project Management
+    </h2>
+
+</div>
+
+<div class="custom-card">
+
+    <h4 class="mb-4">
+        Create New Project
+    </h4>
+
+    <form action="/projects/create" method="POST">
+
+        <div class="mb-3">
+            <input
+                type="text"
+                name="projectName"
+                class="form-control"
+                placeholder="Project Name"
+                required
+            >
+        </div>
+
+        <div class="mb-3">
+            <textarea
+                name="description"
+                class="form-control"
+                rows="4"
+                placeholder="Project Description"
+            ></textarea>
+        </div>
+
+        <button class="btn btn-primary">
+            Create Project
+        </button>
+
+    </form>
+
+</div>
+
+<div class="row">
+
+<% projects.forEach(project => { %>
+
+    <div class="col-md-4">
+
+        <div class="custom-card">
+
+            <h4>
+                <%= project.projectName %>
+            </h4>
+
+            <p>
+                <%= project.description %>
+            </p>
+
+            <hr>
+
+            <small>
+                Created By:
+                <%= project.createdBy.name %>
+            </small>
+
+        </div>
+
+    </div>
+
+<% }) %>
+
+</div>
+
+<%- include('partials/footer') %>

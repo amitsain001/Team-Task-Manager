@@ -1,0 +1,55 @@
+<%- include('../partials/header') %>
+
+<div class="row justify-content-center">
+
+    <div class="col-md-5">
+
+        <div class="custom-card">
+
+            <h2 class="mb-4 text-center">
+                Login
+            </h2>
+
+            <form action="/auth/login" method="POST">
+
+                <div class="mb-3">
+                    <input
+                        type="email"
+                        name="email"
+                        class="form-control"
+                        placeholder="Enter Email"
+                        required
+                    >
+                </div>
+
+                <div class="mb-3">
+                    <input
+                        type="password"
+                        name="password"
+                        class="form-control"
+                        placeholder="Enter Password"
+                        required
+                    >
+                </div>
+
+                <button class="btn btn-primary w-100">
+                    Login
+                </button>
+
+            </form>
+
+            <p class="text-center mt-3">
+                Don't have account?
+
+                <a href="/auth/signup">
+                    Signup
+                </a>
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<%- include('../partials/footer') %>
